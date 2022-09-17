@@ -1,0 +1,38 @@
+{
+	"compilerOptions": {
+		"target": "ESNext",
+		"module": "ESNext",
+		"lib": [
+			"ESNext",
+			"DOM"
+		],
+
+		"moduleResolution": "node",
+		"composite": true,
+		"declaration": true,
+
+		"pretty": true,
+		"strict": true,
+		"isolatedModules": true,
+		"forceConsistentCasingInFileNames": true,
+
+		"jsx": "react",
+		"jsxFactory": "treact.createElement",
+		"jsxFragmentFactory": "treact.createFragmentElement",
+
+		"baseUrl": ".",
+		"rootDir": ".",
+		"outDir": "dist",
+
+		"paths": {
+			"@treact": [
+				"src/treact/treact"
+			]
+		}
+	},
+
+	"include": [
+		"./src/**/*.ts",
+		"./src/**/*.tsx"
+	]
+}

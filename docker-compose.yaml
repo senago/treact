@@ -1,0 +1,11 @@
+version: '3.9'
+services:
+  nginx:
+    image: nginx:latest
+    ports:
+      - "8080:80"
+    volumes:
+      - ./dist:/var/www/web
+      - ./src/examples/assets/static:/var/www/web/static
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx/conf/default.conf:/etc/nginx/conf.d/default.conf

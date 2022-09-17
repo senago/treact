@@ -1,0 +1,7 @@
+{
+	"extends": [ "tslint:recommended", "tslint-eslint-rules", "tslint-consistent-codestyle", "tslint-config-prettier" ],
+	"defaultSeverity": "warning",
+	"linterOptions": {
+		"exclude": [ "src/**/*d.ts" ]
+	}
+}
