@@ -32,10 +32,10 @@ export type Fiber = {
 	ancestor?: Fiber;
 };
 
-type State = {
+type state = {
 	root: Fiber;
 	wipRoot?: Fiber;
-	wipFiber: Fiber;
+	wipFiber?: Fiber;
 	hookIndex: number;
 
 	deletions: Fiber[];
@@ -46,4 +46,4 @@ type State = {
 	nextUnitOfWork?: Fiber;
 };
 
-export const State = {} as State;
+export const State = {} as state;

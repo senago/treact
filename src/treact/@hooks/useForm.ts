@@ -30,21 +30,22 @@ export const useForm = <T extends Partial<Record<keyof T, any>> = {}>(options: {
 
 	const handleSubmit = async (event: SubmitEvent) => {
 		event.preventDefault();
+
 		const { validators } = options;
 		if (validators) {
-			let valid = true;
-			const newErrors: ErrorRecord<T> = {};
+			const errors: ErrorRecord<T> = {};
 			for (const key in validators) {
-				const value = data[key] || "";
-				const validator = validators[key];
-				if (validator && !validator.isValid(value)) {
-					valid = false;
-					newErrors[key] = validator.message;
+				if (validators.hasOwnProperty(key)) {
+					const value = data[key] || "";
+					const validator = validators[key];
+					if (validator && !validator.isValid(value)) {
+						errors[key] = validator.message;
+					}
 				}
 			}
 
-			if (!valid) {
-				setErrors(newErrors);
+			if (Object.keys(errors).length > 0) {
+				setErrors(errors);
 				return;
 			}
 		}
